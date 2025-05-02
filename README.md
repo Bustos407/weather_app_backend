@@ -71,7 +71,7 @@ npm run dev
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "userId": 1
 }
-
+```
 | Método | Endpoint          | Descripción                     | Ejemplo de Request            |
 |--------|-------------------|---------------------------------|--------------------------------|
 | GET   | `/weather/{ciudad}`  | Obtener clima por ciudad         | `{ "City": "ciudad y pais", }` |
