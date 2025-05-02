@@ -1,4 +1,4 @@
-// src/middlewares/cacheMiddleware.ts
+
 import { RequestHandler } from 'express';
 import { weatherCache } from '../cache/weatherCache';
 

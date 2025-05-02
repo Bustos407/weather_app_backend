@@ -56,7 +56,7 @@ CREATE TABLE favorites (
 
 ##Iniciar Servidor
 npm run dev
-
+```
 ## Endpoints Completos 📡
 
 ### Autenticación 🔐
@@ -71,3 +71,43 @@ npm run dev
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "userId": 1
 }
+```
+### Endpoints Clima
+| Método | Endpoint          | Descripción                     | Ejemplo de Request            |
+|--------|-------------------|---------------------------------|--------------------------------|
+| GET   | `/weather/{ciudad}`  | Obtener clima por ciudad         | `{ "City": "ciudad y pais", }` |
+| GET   | `/weather/autocomplete/{query}`     | Autocompletado de ciudades       | `{"Lon"},` |
+| POST   | `/weather/bulk`     | Obtener clima múltiple                 | `{ "cities": ["madrid,es", "london,uk"] }` |
+
+**Respuesta Esperada:**
+```json
+{
+  "city": "Madrid, ES",
+  "temperature": {
+    "celsius": 22.5,
+    "fahrenheit": 72.5
+  },
+  "humidity": 65,
+  "windSpeed": 15.3,
+  "condition": "Sunny"
+}
+```
+### Endpoint Favoritos
+
+| Método | Endpoint          | Descripción                     | Requisitos            |
+|--------|-------------------|---------------------------------|--------------------------------|
+| GET   | `/favorites`  | Obtener favoritos         | `Header: Authorization: Bearer {token}` |
+| POST   | `/favorites`     | Añadir favorito       | `Body: { "city": "paris,fr" }` |
+| DELETE   | `/favorites/{id}`     | Eliminar favorito                | `Path: ID del favorito` |
+| GET   | `/favorites/check`     | Verificar favorito               | `Query: ?city=paris,fr` |
+
+
+## Seguridad🔑
+Medidas Implementadas
+Passwords:
+-Bcrypt con salt de 10 rondas
+-Validación fuerza contraseña en registro
+
+JWT:
+-Firmado con clave secreta HS25
+-HTTP-only cookies en producción

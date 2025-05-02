@@ -1,4 +1,3 @@
-// src/controllers/weatherController.ts
 import { Request, Response } from 'express';
 import { weatherCache, setCacheWithExpiration } from '../cache/weatherCache';
 import { getWeatherByCity, getCitySuggestions } from '../services/weatherService';

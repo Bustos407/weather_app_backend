@@ -20,10 +20,9 @@ export const register = (req: Request, res: Response) => {
         return res.status(409).json({ error: "El usuario ya existe" });
       }
 
-      // Hashear la contraseña
+      
       const hashedPassword = bcrypt.hashSync(password, 10);
 
-      // Insertar el nuevo usuario en la base de datos
       connection.query(
         "INSERT INTO users (username, password) VALUES (?, ?)",
         [username, hashedPassword],

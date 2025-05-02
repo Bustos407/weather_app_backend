@@ -2,8 +2,7 @@
 import { Request, Response, NextFunction, RequestHandler } from 'express';
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET as string; // Asegúrate de que JWT_SECRET esté definido en tu archivo .env
-
+const JWT_SECRET = process.env.JWT_SECRET as string; 
 export const authenticateToken: RequestHandler = (
   req: Request,
   res: Response,
