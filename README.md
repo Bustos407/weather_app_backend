@@ -52,7 +52,7 @@ CREATE TABLE favorites (
     REFERENCES users(id) 
     ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
+```
 
 ##Iniciar Servidor
 npm run dev
