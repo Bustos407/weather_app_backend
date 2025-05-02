@@ -98,3 +98,14 @@ npm run dev
 | POST   | `/favorites`     | Añadir favorito       | `Body: { "city": "paris,fr" }` |
 | DELETE   | `/favorites/{id}`     | Eliminar favorito                | `Path: ID del favorito` |
 | GET   | `/favorites/check`     | Verificar favorito               | `Query: ?city=paris,fr` |
+
+
+## Seguridad🔑
+Medidas Implementadas
+Passwords:
+-Bcrypt con salt de 10 rondas
+-Validación fuerza contraseña en registro
+
+JWT:
+-Firmado con clave secreta HS25
+-HTTP-only cookies en producción
