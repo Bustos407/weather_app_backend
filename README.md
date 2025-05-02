@@ -76,11 +76,10 @@ npm run dev
 |--------|-------------------|---------------------------------|--------------------------------|
 | GET   | `/weather/{ciudad}`  | Obtener clima por ciudad         | `{ "City": "ciudad y pais", }` |
 | GET   | `/weather/autocomplete/{query}`     | Autocompletado de ciudades       | `{"Lon"},` |
-| POST   | `/weather/bulk`     | Obtener clima múltiple                 | `{ "cities": ["madrid,es", "london,uk"] }
-` |
+| POST   | `/weather/bulk`     | Obtener clima múltiple                 | `{ "cities": ["madrid,es", "london,uk"] }` |
 
 **Respuesta Esperada:**
-```
+```json
 {
   "city": "Madrid, ES",
   "temperature": {
@@ -97,5 +96,5 @@ npm run dev
 |--------|-------------------|---------------------------------|--------------------------------|
 | GET   | `/favorites`  | Obtener favoritos         | `Header: Authorization: Bearer {token}` |
 | POST   | `/favorites`     | Añadir favorito       | `Body: { "city": "paris,fr" }` |
-| DELETE   | `/favorites/{id}     | Eliminar favorito                | `Path: ID del favorito` |
-| GET   | `	/favorites/check`     | Verificar favorito               | `Query: ?city=paris,fr` |
+| DELETE   | `/favorites/{id}`     | Eliminar favorito                | `Path: ID del favorito` |
+| GET   | `/favorites/check`     | Verificar favorito               | `Query: ?city=paris,fr` |
