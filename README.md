@@ -52,13 +52,13 @@ CREATE TABLE favorites (
     REFERENCES users(id) 
     ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-```
+
 
 ##Iniciar Servidor
 npm run dev
 
 ## Endpoints Completos 📡
-
+```
 ### Autenticación 🔐
 | Método | Endpoint          | Descripción                     | Ejemplo de Request            |
 |--------|-------------------|---------------------------------|--------------------------------|
@@ -71,3 +71,31 @@ npm run dev
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "userId": 1
 }
+
+| Método | Endpoint          | Descripción                     | Ejemplo de Request            |
+|--------|-------------------|---------------------------------|--------------------------------|
+| GET   | `/weather/{ciudad}`  | Obtener clima por ciudad         | `{ "City": "ciudad y pais", }` |
+| GET   | `/weather/autocomplete/{query}`     | Autocompletado de ciudades       | `{"Lon"},` |
+| POST   | `/weather/bulk`     | Obtener clima múltiple                 | `{ "cities": ["madrid,es", "london,uk"] }
+` |
+
+**Respuesta Esperada:**
+```
+{
+  "city": "Madrid, ES",
+  "temperature": {
+    "celsius": 22.5,
+    "fahrenheit": 72.5
+  },
+  "humidity": 65,
+  "windSpeed": 15.3,
+  "condition": "Sunny"
+}
+```
+
+| Método | Endpoint          | Descripción                     | Requisitos            |
+|--------|-------------------|---------------------------------|--------------------------------|
+| GET   | `/favorites`  | Obtener favoritos         | `Header: Authorization: Bearer {token}` |
+| POST   | `/favorites`     | Añadir favorito       | `Body: { "city": "paris,fr" }` |
+| DELETE   | `/favorites/{id}     | Eliminar favorito                | `Path: ID del favorito` |
+| GET   | `	/favorites/check`     | Verificar favorito               | `Query: ?city=paris,fr` |
