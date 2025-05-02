@@ -56,9 +56,9 @@ CREATE TABLE favorites (
 
 ##Iniciar Servidor
 npm run dev
-
-## Endpoints Completos 📡
 ```
+## Endpoints Completos 📡
+
 ### Autenticación 🔐
 | Método | Endpoint          | Descripción                     | Ejemplo de Request            |
 |--------|-------------------|---------------------------------|--------------------------------|
