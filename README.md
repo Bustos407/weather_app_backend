@@ -72,7 +72,7 @@ npm run dev
   "userId": 1
 }
 ```
-### Endpoints clima 
+### Endpoints Clima
 | Método | Endpoint          | Descripción                     | Ejemplo de Request            |
 |--------|-------------------|---------------------------------|--------------------------------|
 | GET   | `/weather/{ciudad}`  | Obtener clima por ciudad         | `{ "City": "ciudad y pais", }` |
